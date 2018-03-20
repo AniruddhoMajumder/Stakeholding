@@ -97,10 +97,23 @@ public class CompanyDAO{
       }
    }
 
-   public List<String> getAvailableCompanies(){
+   public List<String> getAvailableCompanies() throws SQLException{
       TransactionPartyDAO tpdao = new TransactionPartyDAO(dbUrl, dbUser, dbPass);
+      List<String> ret = new ArrayList<String>();
 
-      String queryString = "SELECT c.id FROM company c, transaction_party tp, transaction t WHERE c.id = tp.company_id and tp.id = t.seller_id and s.issued > sum(t.number)";
+      String queryString = "select c.id from company c, securities s where c.id = s.company_id and available > 0";
+
+      connect();
+
+      Statement getIdsSTAT = dbConnection.createStatement();
+      ResultSet getIdsRSET = getIdsSTAT.executeQuery(queryString);
+
+      while(getIdsRSET.next()){
+         ret.add(getIdsRSET.getString(1));
+      }
+
+      disconnect();
+      return ret;
    }
 
 }

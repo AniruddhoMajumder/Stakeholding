@@ -2,13 +2,9 @@ package dao;
 
 import java.sql.*;
 import java.util.*;
-import project.Security;
+import model.*;
 
 public class SecurityDAO{
-
-   private String dbUrl,
-      dbUser,
-      dbPass;
 
    private Connection dbConnection;
 

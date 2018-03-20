@@ -1,0 +1,21 @@
+<Context>
+
+	<Resource name="jdbc/stocks"
+
+	auth="Container"
+
+	type="javax.sql.DataSource"
+
+	username="root"
+
+	password="root"
+
+	driverClassName="com.mysql.jdbc.Driver"
+
+	url="jdbc:mysql:/localhost:3306/stocks"
+
+	maxActive="15"
+
+	maxIdle="3"/>
+
+</Context>

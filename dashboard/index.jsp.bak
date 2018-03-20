@@ -269,7 +269,7 @@ session.setAttribute("SHARES_SOLD", Double.toString(sdao.getEquitySharesSold(( (
 							<div class="card w-100 p-2 text-left">
 								<div class="card-block row">
 									<div class="col-6">
-										<h5 class="card-title" style="padding-left: 21px;"><% out.print(cdao.getCompanyName(id)); %></h5>
+										<h4 class="card-title" style="padding-left: 21px;"><% out.print(cdao.getCompanyName(id)); %></h4>
 									</div>
 									<div class="col-6">
 										<h6 class="card-title" style="padding-right: 21px; text-align: center;"><% out.print(sdao.getEquitySharePrice(id)); %></h6>
@@ -278,7 +278,7 @@ session.setAttribute("SHARES_SOLD", Double.toString(sdao.getEquitySharesSold(( (
 								<div class="card-header">
 									<ul class=" nav nav-pills card-header-pills">
 										<li class="nav-item">
-											<% out.print("<button class=\"btn btn-success\" onclick=\"setId('" + id + "', " + sdao.getEquitySharePrice(id) + ");\" >Buy</button>"); %>
+											<a class="nav-link" href="https://christuniversity.in/">Buy</a>
 										</li>
 									</ul>
 								</div>
@@ -393,7 +393,7 @@ session.setAttribute("SHARES_SOLD", Double.toString(sdao.getEquitySharesSold(( (
 						}
 					}
 
-					if(i%2!=0){
+					if(1%2!=0){
 				%>
 					</div>
 				<%
@@ -448,19 +448,4 @@ session.setAttribute("SHARES_SOLD", Double.toString(sdao.getEquitySharesSold(( (
 		location.href = "../logout.jsp";
 	};
 </script>
-<script type="text/javascript">
-	function setId(id, price)
-	{
-		document.getElementById('cid').value = id;
-		document.getElementById('price').value = price;
-		document.getElementById('buy').submit();
-		return false;
-	}
-</script>
-<form name="buy" id="buy" method="post" action="buy.jsp">
-	<input type="hidden" name="cid" id="cid">
-	<input type="hidden" name="price" id="price">
-</form>
-<%
-}
-%>
+<%}%>

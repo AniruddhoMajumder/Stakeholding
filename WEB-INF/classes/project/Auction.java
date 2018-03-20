@@ -46,7 +46,11 @@ public class Auction implements Runnable{
                if(System.currentTimeMillis() > (this.startTime + (j*1000))){
                   Thread.sleep(1000);
                }else{
-                  this.askingPrice -= this.askingPrice*.01;
+                  if(bids.size()<=0){
+                     this.askingPrice -= this.askingPrice*.01;
+                  }else{
+                     //sales
+                  }
                }
             }
          }

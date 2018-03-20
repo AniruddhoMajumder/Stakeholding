@@ -22,9 +22,19 @@
   version="3.1"
   metadata-complete="true">
 
-  <display-name>Welcome to Tomcat</display-name>
+  <display-name>Meridia Stakeholding</display-name>
   <description>
-     Welcome to Tomcat
+     A Stakeholding Platform
   </description>
+
+  <servlet>
+    <servlet-name>Reports</servlet-name>
+    <servlet-class>project.Reports</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>Reports</servlet-name>
+    <url-pattern>/Reports</url-pattern>
+  </servlet-mapping>
 
 </web-app>
